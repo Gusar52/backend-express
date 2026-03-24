@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const users = [];
+const users = [{'name': 'vasya'}];
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -14,7 +14,7 @@ router.post('/', function(req, res, next) {
 })
 
 router.get('/:id', function(req, res, next) {
-    let id = req.params.id;
+    let id = req.params.id - 1;
     if (users.length > id) {
         res.send(users[id]);
     }
